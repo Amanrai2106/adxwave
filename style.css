@@ -1357,6 +1357,39 @@ nav {
   color: rgba(240,237,248,0.56);
   font-size: 13px;
 }
+
+/* ── Form feedback (success / error) ── */
+.form-feedback {
+  margin: 0 0 22px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+.form-feedback strong {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.form-feedback a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form-feedback-success {
+  background: linear-gradient(180deg, rgba(94,223,255,0.12), rgba(14,10,28,0.92));
+  border-color: rgba(94,223,255,0.28);
+  color: rgba(235,250,255,0.92);
+}
+.form-feedback-success strong { color: var(--accent3); }
+.form-feedback-error {
+  background: linear-gradient(180deg, rgba(255,107,223,0.1), rgba(14,10,28,0.92));
+  border-color: rgba(255,107,223,0.28);
+  color: rgba(255,240,250,0.92);
+}
+.form-feedback-error strong { color: var(--accent2); }
+
 .contact-reasons {
   background:
     radial-gradient(circle at top left, rgba(94,223,255,0.14), transparent 24%),
