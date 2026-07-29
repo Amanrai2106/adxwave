@@ -118,3 +118,84 @@ if (toolsCards.length) {
   toolsPrev?.addEventListener('click', () => moveTools('prev'));
   toolsNext?.addEventListener('click', () => moveTools('next'));
 }
+
+// Contact form — AJAX submission (Formspree endpoint wired in contact.html)
+(function contactFormHandler() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const successBox = document.getElementById('formSuccess');
+  const errorBox = document.getElementById('formError');
+  const submitBtn = document.getElementById('formSubmitBtn');
+  const emailInput = document.getElementById('formEmail');
+  const replyTo = form.querySelector('input[name="_replyto"]');
+
+  function setLoading(loading) {
+    if (submitBtn) {
+      submitBtn.disabled = loading;
+      const span = submitBtn.querySelector('span');
+      if (span) {
+        if (loading) {
+          submitBtn.dataset.originalText = span.textContent;
+          span.textContent = 'Sending…';
+        } else if (submitBtn.dataset.originalText) {
+          span.textContent = submitBtn.dataset.originalText;
+        }
+      }
+      submitBtn.style.opacity = loading ? '0.7' : '1';
+      submitBtn.style.pointerEvents = loading ? 'none' : 'auto';
+    }
+  }
+
+  function showBox(box) {
+    if (!box) return;
+    box.hidden = false;
+    if (box === successBox && errorBox) errorBox.hidden = true;
+    if (box === errorBox && successBox) successBox.hidden = true;
+    if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (successBox) successBox.hidden = true;
+    if (errorBox) errorBox.hidden = true;
+
+    if (emailInput && replyTo) {
+      replyTo.value = emailInput.value.trim();
+    }
+
+    const data = new FormData(form);
+    setLoading(true);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        showBox(successBox);
+        setTimeout(() => { if (successBox) successBox.hidden = true; }, 9000);
+      } else {
+        let msg = 'Something went wrong. Please try again.';
+        try {
+          const json = await res.json();
+          if (json?.errors?.length) {
+            msg = json.errors.map(er => er.message).join(', ');
+          } else if (json?.error) {
+            msg = json.error;
+          }
+        } catch (_) {}
+        if (errorBox) errorBox.querySelector('strong').nextSibling.textContent =
+          ' ' + msg + '. ';
+        showBox(errorBox);
+      }
+    } catch (err) {
+      showBox(errorBox);
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
