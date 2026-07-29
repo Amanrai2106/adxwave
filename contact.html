@@ -55,7 +55,25 @@
       <article class="contact-panel reveal contact-form-panel">
         <div class="card-kicker">Send Inquiry</div>
         <h2 class="card-title">Contact Form</h2>
-        <form class="contact-form" action="mailto:info@adxwave.com" method="post" enctype="text/plain">
+
+        <div class="form-feedback form-feedback-success" id="formSuccess" hidden>
+          <strong>Message sent!</strong> Your inquiry was delivered to our team. We will reply within 24 hours.
+        </div>
+        <div class="form-feedback form-feedback-error" id="formError" hidden>
+          <strong>Sorry, something went wrong.</strong> Please email us directly at
+          <a href="mailto:vrai51971@gmail.com">vrai51971@gmail.com</a> and we will get right back to you.
+        </div>
+
+        <form
+          class="contact-form"
+          id="contactForm"
+          action="https://formspree.io/f/xdaqjnkj"
+          method="POST"
+        >
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+          <input type="hidden" name="_subject" value="New website inquiry — Adxwave" />
+          <input type="hidden" name="_cc" value="info@adxwave.com" />
+          <input type="hidden" name="_replyto" value="" />
           <div class="form-grid">
             <label class="form-field">
               <span>Name</span>
@@ -67,7 +85,7 @@
             </label>
             <label class="form-field">
               <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required />
+              <input type="email" name="email" id="formEmail" placeholder="you@example.com" required />
             </label>
             <label class="form-field">
               <span>Service</span>
@@ -79,6 +97,7 @@
                 <option>SEO</option>
                 <option>Social Media Handling</option>
                 <option>Web Development</option>
+                <option>Other</option>
               </select>
             </label>
           </div>
@@ -87,7 +106,7 @@
             <textarea name="message" rows="6" placeholder="Tell us about your goals, business, and what you want help with." required></textarea>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn-primary"><span>Send Message</span></button>
+            <button type="submit" class="btn-primary" id="formSubmitBtn"><span>Send Message</span></button>
             <p>We usually respond within 24 hours.</p>
           </div>
         </form>
