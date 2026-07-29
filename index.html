@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adxwave — Your Growth, Our Mission</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-trail" id="cursorTrail"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Adx<span>wave</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#work">Results</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Session</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+
+  <!-- Growth / Digital Marketing Visual -->
+  <div class="prism-bg">
+    <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#b06fff" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#b06fff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+        <filter id="bigglow"><feGaussianBlur stdDeviation="10" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+      </defs>
+
+      <!-- Background glow -->
+      <circle cx="220" cy="220" r="200" fill="url(#glowCenter)"/>
+
+      <!-- Orbit rings -->
+      <circle cx="220" cy="220" r="170" stroke="rgba(176,111,255,0.07)" stroke-width="1" stroke-dasharray="2 10"/>
+      <circle cx="220" cy="220" r="120" stroke="rgba(176,111,255,0.06)" stroke-width="1" stroke-dasharray="3 8"/>
+      <circle cx="220" cy="220" r="70"  stroke="rgba(176,111,255,0.08)" stroke-width="1"/>
+
+      <!-- Bar chart growth (bottom area) -->
+      <rect x="80"  y="320" width="22" height="40"  fill="#b06fff" opacity="0.18" rx="2"/>
+      <rect x="112" y="295" width="22" height="65"  fill="#b06fff" opacity="0.22" rx="2"/>
+      <rect x="144" y="265" width="22" height="95"  fill="#b06fff" opacity="0.28" rx="2"/>
+      <rect x="176" y="240" width="22" height="120" fill="#b06fff" opacity="0.35" rx="2"/>
+      <rect x="208" y="210" width="22" height="150" fill="#b06fff" opacity="0.42" rx="2"/>
+      <rect x="240" y="185" width="22" height="175" fill="#5edfff" opacity="0.3"  rx="2"/>
+      <rect x="272" y="155" width="22" height="205" fill="#5edfff" opacity="0.38" rx="2"/>
+      <rect x="304" y="120" width="22" height="240" fill="#ff6bdf" opacity="0.3"  rx="2"/>
+      <rect x="336" y="90"  width="22" height="270" fill="#ff6bdf" opacity="0.38" rx="2"/>
+
+      <!-- Trend line over bars -->
+      <polyline points="91,318 123,292 155,262 187,238 219,207 251,182 283,151 315,118 347,88"
+        stroke="#b06fff" stroke-width="2" stroke-opacity="0.7" fill="none" filter="url(#glow)"/>
+
+      <!-- Dots on trend line -->
+      <circle cx="91"  cy="318" r="3.5" fill="#b06fff" opacity="0.9"/>
+      <circle cx="155" cy="262" r="3.5" fill="#5edfff" opacity="0.9"/>
+      <circle cx="219" cy="207" r="5"   fill="#b06fff" opacity="1" filter="url(#glow)"/>
+      <circle cx="283" cy="151" r="3.5" fill="#5edfff" opacity="0.9"/>
+      <circle cx="347" cy="88"  r="4"   fill="#ff6bdf" opacity="1" filter="url(#glow)"/>
+
+      <!-- Floating metric badges -->
+      <rect x="50"  y="130" width="90" height="36" rx="18" fill="rgba(176,111,255,0.12)" stroke="rgba(176,111,255,0.3)" stroke-width="1"/>
+      <text x="95"  y="153" text-anchor="middle" font-family="monospace" font-size="11" fill="#b06fff" opacity="0.9">+340% ROI</text>
+
+      <rect x="300" y="50"  width="100" height="36" rx="18" fill="rgba(94,223,255,0.1)"  stroke="rgba(94,223,255,0.3)"  stroke-width="1"/>
+      <text x="350" y="73"  text-anchor="middle" font-family="monospace" font-size="11" fill="#5edfff" opacity="0.9">3.2x Leads</text>
+
+      <rect x="290" y="330" width="110" height="36" rx="18" fill="rgba(255,107,223,0.1)"  stroke="rgba(255,107,223,0.3)"  stroke-width="1"/>
+      <text x="345" y="353" text-anchor="middle" font-family="monospace" font-size="11" fill="#ff6bdf" opacity="0.9">150+ Clients</text>
+
+      <!-- Pulse on peak dot -->
+      <circle cx="347" cy="88" r="10" stroke="#ff6bdf" stroke-width="1" fill="none">
+        <animate attributeName="r" from="6" to="24" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" from="0.7" to="0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">Full-Service Digital Marketing Agency</p>
+
+  <h1 class="hero-title">
+    <span class="line1">Grow</span><br/>
+    <span class="line2">Your</span><br/>
+    <span class="line3">Business</span>
+  </h1>
+
+  <p class="hero-sub">
+    Adxwave is a results-driven digital marketing agency.<br/>
+    We generate leads, build brands, and scale revenues —<br/>
+    so you can focus on running your business.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#services" class="btn-primary"><span>Our Services</span></a>
+    <a href="#process" class="btn-ghost">
+      How We Work <span class="arrow"></span>
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">150+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">340%</div>
+      <div class="stat-label">Avg. ROI Delivered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Services Offered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3X</div>
+      <div class="stat-label">Avg. Lead Growth</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">LinkedIn Leads <span>✦</span></div>
+    <div class="marquee-item">Meta Ads <span>✦</span></div>
+    <div class="marquee-item">Google Ads <span>✦</span></div>
+    <div class="marquee-item">SEO Optimization <span>✦</span></div>
+    <div class="marquee-item">Social Marketing <span>✦</span></div>
+    <div class="marquee-item">Web Development <span>✦</span></div>
+    <div class="marquee-item">Video Editing <span>✦</span></div>
+    <div class="marquee-item">LinkedIn Leads <span>✦</span></div>
+    <div class="marquee-item">Meta Ads <span>✦</span></div>
+    <div class="marquee-item">Google Ads <span>✦</span></div>
+    <div class="marquee-item">SEO Optimization <span>✦</span></div>
+    <div class="marquee-item">Social Marketing <span>✦</span></div>
+    <div class="marquee-item">Web Development <span>✦</span></div>
+    <div class="marquee-item">Video Editing <span>✦</span></div>
+  </div>
+</div>
+
+<!--
+  TOOLS SHOWCASE (TEMPORARILY HIDDEN)
+<section id="tools-showcase">
+  <div class="tools-showcase-copy reveal">
+    <p class="section-label">Subscription Tools</p>
+    <h2 class="section-title">Subscriptions We<br/><em>Are Providing</em></h2>
+    <p class="tools-showcase-text">
+      Explore the premium subscriptions we are providing for growth-focused brands, creators,
+      and businesses. Each card can showcase a tool, platform, or resource that helps streamline
+      marketing, automation, content, and business scaling.
+    </p>
+  </div>
+
+  <div class="tools-carousel reveal" id="toolsCarousel">
+    <div class="tools-carousel-top">
+      <span class="tools-carousel-kicker">Use arrows to explore</span>
+      <div class="tools-carousel-actions">
+        <button class="tools-arrow" id="toolsPrev" type="button" aria-label="Show previous tool">
+          <span></span>
+        </button>
+        <button class="tools-arrow" id="toolsNext" type="button" aria-label="Show next tool">
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tools-viewport">
+      <div class="tools-track" id="toolsTrack">
+        <article class="tool-card is-active">
+        <span class="tool-card-index">01</span>
+        <div class="tool-card-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%230e0a1c'/%3E%3Crect x='36' y='36' width='528' height='728' rx='28' fill='none' stroke='%23b06fff' stroke-opacity='0.4'/%3E%3Ctext x='50%25' y='44%25' text-anchor='middle' fill='%23b06fff' font-family='Arial' font-size='34' letter-spacing='6'%3EADD IMAGE%3C/text%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%235edfff' font-family='Arial' font-size='18' letter-spacing='4'%3ETOOL CARD 01%3C/text%3E%3C/svg%3E" alt="Subscription tool placeholder card 1"/>
+        </div>
+        <h3>Tool Slot One</h3>
+        <p>Replace this image with your first subscription tool creative.</p>
+        </article>
+
+        <article class="tool-card">
+        <span class="tool-card-index">02</span>
+        <div class="tool-card-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%230e0a1c'/%3E%3Crect x='36' y='36' width='528' height='728' rx='28' fill='none' stroke='%23ff6bdf' stroke-opacity='0.4'/%3E%3Ctext x='50%25' y='44%25' text-anchor='middle' fill='%23ff6bdf' font-family='Arial' font-size='34' letter-spacing='6'%3EADD IMAGE%3C/text%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%235edfff' font-family='Arial' font-size='18' letter-spacing='4'%3ETOOL CARD 02%3C/text%3E%3C/svg%3E" alt="Subscription tool placeholder card 2"/>
+        </div>
+        <h3>Tool Slot Two</h3>
+        <p>Use this card for another app screenshot, offer, or brand visual.</p>
+        </article>
+
+        <article class="tool-card">
+        <span class="tool-card-index">03</span>
+        <div class="tool-card-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%230e0a1c'/%3E%3Crect x='36' y='36' width='528' height='728' rx='28' fill='none' stroke='%235edfff' stroke-opacity='0.45'/%3E%3Ctext x='50%25' y='44%25' text-anchor='middle' fill='%235edfff' font-family='Arial' font-size='34' letter-spacing='6'%3EADD IMAGE%3C/text%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23b06fff' font-family='Arial' font-size='18' letter-spacing='4'%3ETOOL CARD 03%3C/text%3E%3C/svg%3E" alt="Subscription tool placeholder card 3"/>
+        </div>
+        <h3>Tool Slot Three</h3>
+        <p>Perfect for showcasing dashboards, SaaS UI, or membership tool art.</p>
+        </article>
+
+        <article class="tool-card">
+        <span class="tool-card-index">04</span>
+        <div class="tool-card-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'%3E%3Crect width='600' height='800' fill='%230e0a1c'/%3E%3Crect x='36' y='36' width='528' height='728' rx='28' fill='none' stroke='%23b06fff' stroke-opacity='0.35'/%3E%3Ctext x='50%25' y='44%25' text-anchor='middle' fill='%23b06fff' font-family='Arial' font-size='34' letter-spacing='6'%3EADD IMAGE%3C/text%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23ff6bdf' font-family='Arial' font-size='18' letter-spacing='4'%3ETOOL CARD 04%3C/text%3E%3C/svg%3E" alt="Subscription tool placeholder card 4"/>
+        </div>
+        <h3>Tool Slot Four</h3>
+        <p>Drop in your final tool visual to complete the full animated collection.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label reveal">Our Services</p>
+  <h2 class="section-title reveal" style="margin-bottom:60px;">What We <em>Do</em></h2>
+  <div class="services-grid">
+
+    <div class="service-card reveal">
+      <div class="service-num">01</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="6" y="6" width="36" height="36" rx="18" stroke-opacity="0.25"/>
+        <circle cx="16" cy="20" r="4" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <circle cx="32" cy="20" r="4" stroke="var(--accent3)" stroke-opacity="0.8"/>
+        <path d="M10 34 C10 28 22 24 24 24 C26 24 38 28 38 34" stroke="var(--accent2)" stroke-opacity="0.7"/>
+        <line x1="20" y1="20" x2="28" y2="20" stroke="var(--accent)" stroke-opacity="0.4"/>
+      </svg>
+      <h3 class="service-title">LinkedIn Lead Generation</h3>
+      <p class="service-desc">We believe that great design has the power to elevate brands and drive real, qualified leads through LinkedIn's professional ecosystem.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">02</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="4" y="10" width="40" height="28" rx="3" stroke-opacity="0.25"/>
+        <circle cx="14" cy="24" r="5" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <circle cx="28" cy="18" r="4" stroke="var(--accent3)" stroke-opacity="0.8"/>
+        <circle cx="36" cy="30" r="3" stroke="var(--accent2)" stroke-opacity="0.7"/>
+        <line x1="19" y1="24" x2="24" y2="18" stroke="var(--accent)" stroke-opacity="0.4"/>
+        <line x1="32" y1="18" x2="33" y2="30" stroke="var(--accent3)" stroke-opacity="0.4"/>
+      </svg>
+      <h3 class="service-title">Social Marketing</h3>
+      <p class="service-desc">Build your online presence on social media platforms and connect with your audience through compelling, consistent content strategies.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">03</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="4" y="10" width="40" height="28" rx="3" stroke-opacity="0.25"/>
+        <polyline points="4,14 24,26 44,14" stroke="var(--accent)" stroke-opacity="0.8"/>
+        <line x1="4"  y1="22" x2="14" y2="27" stroke="var(--accent3)" stroke-opacity="0.4"/>
+        <line x1="44" y1="22" x2="34" y2="27" stroke="var(--accent3)" stroke-opacity="0.4"/>
+      </svg>
+      <h3 class="service-title">Email Marketing</h3>
+      <p class="service-desc">Craft campaigns that land in inboxes and minds alike. From nurture sequences to product launches — every mail engineered to convert.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="4" y="8" width="40" height="28" rx="2" stroke-opacity="0.25"/>
+        <line x1="16" y1="40" x2="32" y2="40" stroke-opacity="0.4"/>
+        <line x1="24" y1="36" x2="24" y2="40" stroke-opacity="0.4"/>
+        <path d="M12 28 L18 20 L24 24 L30 14 L36 18" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <circle cx="12" cy="28" r="2" fill="var(--accent2)" stroke="none"/>
+        <circle cx="36" cy="18" r="2" fill="var(--accent3)" stroke="none"/>
+      </svg>
+      <h3 class="service-title">Web Development</h3>
+      <p class="service-desc">Get your attractive and responsive website at a genuine price. Modern, fast, and built to convert visitors into loyal customers.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">05</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="24" cy="18" r="10" stroke-opacity="0.25"/>
+        <path d="M16 14 Q12 8 18 6 Q22 4 24 8" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <path d="M32 14 Q36 8 30 6 Q26 4 24 8" stroke="var(--accent3)" stroke-opacity="0.8"/>
+        <path d="M14 28 Q10 36 16 40 Q20 42 24 40 Q28 42 32 40 Q38 36 34 28" stroke="var(--accent2)" stroke-opacity="0.6"/>
+        <line x1="20" y1="28" x2="28" y2="28" stroke="var(--accent)" stroke-opacity="0.4"/>
+      </svg>
+      <h3 class="service-title">Graphic Designing</h3>
+      <p class="service-desc">We believe that great design has the power to elevate brands. From logos to full brand identities — crafted with intention and impact.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">06</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="6" y="10" width="28" height="28" rx="3" stroke-opacity="0.25"/>
+        <polygon points="34,14 44,24 34,34" fill="var(--accent)" stroke="none" opacity="0.8"/>
+        <line x1="12" y1="18" x2="28" y2="18" stroke="var(--accent3)" stroke-opacity="0.6"/>
+        <line x1="12" y1="24" x2="28" y2="24" stroke="var(--accent3)" stroke-opacity="0.4"/>
+        <line x1="12" y1="30" x2="22" y2="30" stroke="var(--accent3)" stroke-opacity="0.3"/>
+      </svg>
+      <h3 class="service-title">Video Editing</h3>
+      <p class="service-desc">Bring your brand story to life with professional video editing. Reels, ads, long-form — every frame crafted to captivate and convert.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">07</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="24" cy="24" r="16" stroke-opacity="0.2"/>
+        <path d="M8 24 C8 14 14 8 24 8" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <path d="M40 24 C40 34 34 40 24 40" stroke="var(--accent3)" stroke-opacity="0.7"/>
+        <path d="M16 10 C16 10 20 22 16 38" stroke="var(--accent2)" stroke-opacity="0.5"/>
+        <path d="M32 10 C32 10 28 22 32 38" stroke="var(--accent2)" stroke-opacity="0.5"/>
+        <line x1="8" y1="24" x2="40" y2="24" stroke-opacity="0.2"/>
+      </svg>
+      <h3 class="service-title">SEO Optimization</h3>
+      <p class="service-desc">Get the best organic traffic on your website. We optimise your content, structure, and authority to rank higher and stay there.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">08</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="24" cy="14" r="7" stroke="var(--accent)" stroke-opacity="0.8"/>
+        <circle cx="10" cy="36" r="5" stroke="var(--accent3)" stroke-opacity="0.7"/>
+        <circle cx="38" cy="36" r="5" stroke="var(--accent2)" stroke-opacity="0.7"/>
+        <line x1="17" y1="18" x2="13" y2="31" stroke-opacity="0.35"/>
+        <line x1="31" y1="18" x2="35" y2="31" stroke-opacity="0.35"/>
+        <line x1="15" y1="36" x2="33" y2="36" stroke-opacity="0.2"/>
+      </svg>
+      <h3 class="service-title">Influencer Marketing</h3>
+      <p class="service-desc">Empowering your brand through authentic influencer marketing. We connect you with voices your audience already trusts.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">09</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="6" y="6" width="36" height="36" rx="8" stroke-opacity="0.2"/>
+        <path d="M14 24 C14 18 18 14 24 14 C28 14 31 16 33 20" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <path d="M33 20 L36 16 M33 20 L30 17" stroke="var(--accent)" stroke-opacity="0.7"/>
+        <path d="M34 24 C34 30 30 34 24 34 C20 34 17 32 15 28" stroke="var(--accent3)" stroke-opacity="0.8"/>
+        <path d="M15 28 L12 32 M15 28 L18 31" stroke="var(--accent3)" stroke-opacity="0.6"/>
+      </svg>
+      <h3 class="service-title">Meta Ads</h3>
+      <p class="service-desc">Get the best results with Meta Ads. Precision targeting across Facebook and Instagram to put your brand in front of the right people.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">10</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="24" cy="24" r="16" stroke-opacity="0.2"/>
+        <path d="M32 20 C30 16 27 14 24 14 C18 14 14 18.7 14 24 C14 29.3 18 34 24 34 C28 34 31 31.5 32.5 28" stroke="var(--accent)" stroke-opacity="0.85"/>
+        <path d="M28 24 L40 24 L40 18 L28 18 Z" fill="var(--accent)" stroke="none" opacity="0.15"/>
+        <path d="M28 18 L40 18 L40 24 L28 24" stroke="var(--accent)" stroke-opacity="0.7"/>
+        <line x1="30" y1="26" x2="38" y2="26" stroke="var(--accent3)" stroke-opacity="0.5"/>
+        <line x1="30" y1="29" x2="36" y2="29" stroke="var(--accent3)" stroke-opacity="0.4"/>
+      </svg>
+      <h3 class="service-title">Google Ads</h3>
+      <p class="service-desc">Get the best results with Google Ads. Capture high-intent traffic at the exact moment your customers are searching for what you offer.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">11</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="6" y="28" width="10" height="14" rx="1" stroke="var(--accent3)" stroke-opacity="0.8"/>
+        <rect x="19" y="18" width="10" height="24" rx="1" stroke="var(--accent)" stroke-opacity="0.9"/>
+        <rect x="32" y="8"  width="10" height="34" rx="1" stroke="var(--accent2)" stroke-opacity="0.8"/>
+        <line x1="6"  y1="6" x2="42" y2="6" stroke-opacity="0.15"/>
+        <path d="M8 26 L22 16 L34 8" stroke="var(--accent)" stroke-opacity="0.4" stroke-dasharray="3 3"/>
+      </svg>
+      <h3 class="service-title">Market Funnel Creation</h3>
+      <p class="service-desc">Get your business to the next level with strategic funnels. From awareness to conversion — we architect every step of the customer journey.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">12</div>
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M24 6 L40 14 L40 26 C40 34 33 41 24 44 C15 41 8 34 8 26 L8 14 Z" stroke-opacity="0.25"/>
+        <path d="M24 12 L36 18 L36 26 C36 32 31 37 24 40 C17 37 12 32 12 26 L12 18 Z" stroke="var(--accent)" stroke-opacity="0.6"/>
+        <polyline points="18,24 22,28 30,20" stroke="var(--accent3)" stroke-opacity="0.9" stroke-width="2"/>
+      </svg>
+      <h3 class="service-title">Business Development</h3>
+      <p class="service-desc">Your trusted partner in business development. We identify growth opportunities, build strategic partnerships, and scale your operations confidently.</p>
+      <a href="#" class="service-link">Explore →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="work">
+  <div class="work-header reveal">
+    <h2 class="section-title">Client<br/><em>Wins</em></h2>
+    <a href="#" class="btn-ghost">All Case Studies <span class="arrow"></span></a>
+  </div>
+  <div class="projects-list">
+    <div class="project-row reveal">
+      <span class="project-idx">001</span>
+      <span class="project-name">D2C Fashion Brand</span>
+      <div class="project-tags"><span class="tag">Meta Ads</span><span class="tag">Funnel</span></div>
+      <span class="project-year">4.2x ROAS</span>
+    </div>
+    <div class="project-row reveal">
+      <span class="project-idx">002</span>
+      <span class="project-name">B2B SaaS Startup</span>
+      <div class="project-tags"><span class="tag">LinkedIn</span><span class="tag">SEO</span></div>
+      <span class="project-year">300% Leads</span>
+    </div>
+    <div class="project-row reveal">
+      <span class="project-idx">003</span>
+      <span class="project-name">Real Estate Agency</span>
+      <div class="project-tags"><span class="tag">Google Ads</span><span class="tag">Web</span></div>
+      <span class="project-year">2.8x ROI</span>
+    </div>
+    <div class="project-row reveal">
+      <span class="project-idx">004</span>
+      <span class="project-name">EdTech Platform</span>
+      <div class="project-tags"><span class="tag">Social</span><span class="tag">Video</span></div>
+      <span class="project-year">5x Signups</span>
+    </div>
+    <div class="project-row reveal">
+      <span class="project-idx">005</span>
+      <span class="project-name">Local Retail Chain</span>
+      <div class="project-tags"><span class="tag">SEO</span><span class="tag">Meta Ads</span></div>
+      <span class="project-year">220% Traffic</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <p class="section-label reveal">How We Work</p>
+  <h2 class="section-title reveal">The<br/><em>Process</em></h2>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3 class="step-title">Discovery Call</h3>
+        <p class="step-desc">We start by understanding your business — goals, target audience, current challenges, and competitors. No templates. Just real strategy built for you.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3 class="step-title">Custom Strategy</h3>
+        <p class="step-desc">Our team crafts a data-backed marketing plan — choosing the right channels, messaging, and budget allocation to maximise your ROI from day one.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3 class="step-title">Execute & Launch</h3>
+        <p class="step-desc">We build, launch, and manage every campaign — ads, content, creatives, funnels — with precision. Fast execution, zero compromises on quality.</p>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3 class="step-title">Optimise & Scale</h3>
+        <p class="step-desc">Weekly reporting, A/B testing, and continuous optimisation ensure your campaigns improve every month. When results come, we scale aggressively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-bg-text">GROW</div>
+  <div class="cta-left reveal">
+    <h2 class="cta-headline">Ready to<br/><span>Scale</span><br/>Your Brand?</h2>
+  </div>
+  <div class="cta-right reveal">
+    <a href="mailto:hello@adxwave.com" class="btn-primary" style="font-size:13px; padding: 18px 44px;"><span>Get Free Consultation</span></a>
+    <p style="font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-top:16px; letter-spacing:0.1em;">hello@adxwave.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-orb footer-orb-left"></div>
+  <div class="footer-orb footer-orb-right"></div>
+
+  <div class="footer-top">
+    <div class="footer-brand reveal">
+      <div class="footer-badge">
+        <div class="footer-badge-ring"></div>
+        <div class="footer-badge-core">AW</div>
+      </div>
+      <div class="footer-logo">Adx<span>wave</span></div>
+      <p class="footer-brand-text">
+        Adxwave is a result-driven digital marketing agency helping brands grow through
+        SEO, Google Ads, Social Media Marketing, Business Funnels, and complete digital solutions.
+      </p>
+    </div>
+
+    <div class="footer-links-group reveal">
+      <h3 class="footer-heading">Useful Links</h3>
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="#work">Blogs</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-links-group reveal">
+      <h3 class="footer-heading">Services</h3>
+      <div class="footer-links">
+        <a href="services.html">LinkedIn Lead Generation & Growth</a>
+        <a href="services.html">Meta Ads</a>
+        <a href="services.html">Social Media Handling</a>
+        <a href="services.html">Video Editing</a>
+        <a href="services.html">SEO</a>
+        <a href="services.html">Graphics Designing</a>
+        <a href="services.html">Business & Marketing Consultation</a>
+      </div>
+    </div>
+
+    <div class="footer-contact reveal">
+      <h3 class="footer-heading">Contact Us</h3>
+      <div class="footer-contact-list">
+        <a href="https://wa.me/919027417597"><span>WhatsApp</span> +91-9027417597</a>
+        <a href="tel:+918267841608"><span>Call</span> +91-8267841608</a>
+        <a href="mailto:info@adxwave.com"><span>Email</span> info@adxwave.com</a>
+        <p><span>Hours</span> Mon - Sat: 9:00 AM - 10:00 AM</p>
+        <p><span>Location</span> Uttarakhand</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Adxwave. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
